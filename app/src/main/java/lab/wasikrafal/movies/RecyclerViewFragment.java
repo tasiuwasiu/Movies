@@ -143,82 +143,82 @@ public class RecyclerViewFragment extends Fragment
     private void initDataset()
     {
         Movie movie = new Movie("Mad Max: Fury Road", "Action & Adventure", "2015");
-        movie.setActorList(Arrays.asList("Hello", "World!", "How", "Are", "You"));
+        movie.setActorList(Arrays.asList("Mel Gibson", "Hugh Jackman", "Jason Statham", "Emma Watson", "Sean Connery"));
         movie.setImageList(Arrays.asList(R.drawable.pic1,R.drawable.pic5,R.drawable.pic2,R.drawable.pic6,R.drawable.pic3,R.drawable.pic9));
         movieList.add(movie);
 
         movie = new Movie("Inside Out", "Animation, Kids & Family", "2015");
-        movie.setActorList(Arrays.asList("Hello", "World!", "How", "Are", "You"));
+        movie.setActorList(Arrays.asList("Jason Statham", "Clint Eastwood", "Leonardo diCaprio", "Hugh Jackman", "Keira Knightley", "Mel Gibson"));
         movie.setImageList(Arrays.asList(R.drawable.pic5,R.drawable.pic1,R.drawable.pic7,R.drawable.pic6,R.drawable.pic2,R.drawable.pic3));
         movieList.add(movie);
 
         movie = new Movie("Star Wars: Episode VII - The Force Awakens", "Action", "2015");
-        movie.setActorList(Arrays.asList("Hello", "World!", "How", "Are", "You"));
+        movie.setActorList(Arrays.asList("Sean Connery", "Johny Deep", "Jason Statham", "Clint Eastwood", "Leonardo diCaprio"));
         movie.setImageList(Arrays.asList(R.drawable.pic4,R.drawable.pic9,R.drawable.pic2,R.drawable.pic3,R.drawable.pic6,R.drawable.pic1));
         movieList.add(movie);
 
         movie = new Movie("Shaun the Sheep", "Animation", "2015");
-        movie.setActorList(Arrays.asList("Hello", "World!", "How", "Are", "You"));
+        movie.setActorList(Arrays.asList("Hugh Jackman", "Keira Knightley", "Mel Gibson", "Emma Watson", "Sean Connery", "Johny Deep"));
         movie.setImageList(Arrays.asList(R.drawable.pic1,R.drawable.pic2,R.drawable.pic3,R.drawable.pic4,R.drawable.pic5,R.drawable.pic6));
         movieList.add(movie);
 
         movie = new Movie("The Martian", "Science Fiction & Fantasy", "2015");
-        movie.setActorList(Arrays.asList("Hello", "World!", "How", "Are", "You"));
+        movie.setActorList(Arrays.asList("Mel Gibson", "Hugh Jackman", "Jason Statham", "Emma Watson", "Sean Connery"));
         movie.setImageList(Arrays.asList(R.drawable.pic9,R.drawable.pic8,R.drawable.pic7,R.drawable.pic6,R.drawable.pic5,R.drawable.pic4));
         movieList.add(movie);
 
         movie = new Movie("Mission: Impossible Rogue Nation", "Action", "2015");
-        movie.setActorList(Arrays.asList("Hello", "World!", "How", "Are", "You"));
+        movie.setActorList(Arrays.asList("Jason Statham", "Clint Eastwood", "Leonardo diCaprio", "Hugh Jackman", "Keira Knightley", "Mel Gibson"));
         movie.setImageList(Arrays.asList(R.drawable.pic1,R.drawable.pic5,R.drawable.pic2,R.drawable.pic6,R.drawable.pic3,R.drawable.pic9));
         movieList.add(movie);
 
         movie = new Movie("Up", "Animation", "2009");
-        movie.setActorList(Arrays.asList("Hello", "World!", "How", "Are", "You"));
+        movie.setActorList(Arrays.asList("Sean Connery", "Johny Deep", "Jason Statham", "Clint Eastwood", "Leonardo diCaprio"));
         movie.setImageList(Arrays.asList(R.drawable.pic5,R.drawable.pic1,R.drawable.pic7,R.drawable.pic6,R.drawable.pic2,R.drawable.pic3));
         movieList.add(movie);
 
         movie = new Movie("Star Trek", "Science Fiction", "2009");
-        movie.setActorList(Arrays.asList("Hello", "World!", "How", "Are", "You"));
+        movie.setActorList(Arrays.asList("Hugh Jackman", "Keira Knightley", "Mel Gibson", "Emma Watson", "Sean Connery", "Johny Deep"));
         movie.setImageList(Arrays.asList(R.drawable.pic4,R.drawable.pic9,R.drawable.pic2,R.drawable.pic3,R.drawable.pic6,R.drawable.pic1));
         movieList.add(movie);
 
         movie = new Movie("The LEGO Movie", "Animation", "2014");
-        movie.setActorList(Arrays.asList("Hello", "World!", "How", "Are", "You"));
+        movie.setActorList(Arrays.asList("Mel Gibson", "Hugh Jackman", "Jason Statham", "Emma Watson", "Sean Connery"));
         movie.setImageList(Arrays.asList(R.drawable.pic1,R.drawable.pic2,R.drawable.pic3,R.drawable.pic4,R.drawable.pic5,R.drawable.pic6));
         movieList.add(movie);
 
         movie = new Movie("Iron Man", "Action & Adventure", "2008");
-        movie.setActorList(Arrays.asList("Hello", "World!", "How", "Are", "You"));
+        movie.setActorList(Arrays.asList("Jason Statham", "Clint Eastwood", "Leonardo diCaprio", "Hugh Jackman", "Keira Knightley", "Mel Gibson"));
         movie.setImageList(Arrays.asList(R.drawable.pic9,R.drawable.pic8,R.drawable.pic7,R.drawable.pic6,R.drawable.pic5,R.drawable.pic4));
         movieList.add(movie);
 
         movie = new Movie("Aliens", "Science Fiction", "1986");
-        movie.setActorList(Arrays.asList("Hello", "World!", "How", "Are", "You"));
+        movie.setActorList(Arrays.asList("Sean Connery", "Johny Deep", "Jason Statham", "Clint Eastwood", "Leonardo diCaprio"));
         movie.setImageList(Arrays.asList(R.drawable.pic1,R.drawable.pic5,R.drawable.pic2,R.drawable.pic6,R.drawable.pic3,R.drawable.pic9));
         movieList.add(movie);
 
         movie = new Movie("Chicken Run", "Animation", "2000");
-        movie.setActorList(Arrays.asList("Hello", "World!", "How", "Are", "You"));
+        movie.setActorList(Arrays.asList("Hugh Jackman", "Keira Knightley", "Mel Gibson", "Emma Watson", "Sean Connery", "Johny Deep"));
         movie.setImageList(Arrays.asList(R.drawable.pic5,R.drawable.pic1,R.drawable.pic7,R.drawable.pic6,R.drawable.pic2,R.drawable.pic3));
         movieList.add(movie);
 
         movie = new Movie("Back to the Future", "Science Fiction", "1985");
-        movie.setActorList(Arrays.asList("Hello", "World!", "How", "Are", "You"));
+        movie.setActorList(Arrays.asList("Mel Gibson", "Hugh Jackman", "Jason Statham", "Emma Watson", "Sean Connery"));
         movie.setImageList(Arrays.asList(R.drawable.pic4,R.drawable.pic9,R.drawable.pic2,R.drawable.pic3,R.drawable.pic6,R.drawable.pic1));
         movieList.add(movie);
 
         movie = new Movie("Raiders of the Lost Ark", "Action & Adventure", "1981");
-        movie.setActorList(Arrays.asList("Hello", "World!", "How", "Are", "You"));
+        movie.setActorList(Arrays.asList("Jason Statham", "Clint Eastwood", "Leonardo diCaprio", "Hugh Jackman", "Keira Knightley", "Mel Gibson"));
         movie.setImageList(Arrays.asList(R.drawable.pic1,R.drawable.pic2,R.drawable.pic3,R.drawable.pic4,R.drawable.pic5,R.drawable.pic6));
         movieList.add(movie);
 
         movie = new Movie("Goldfinger", "Action & Adventure", "1965");
-        movie.setActorList(Arrays.asList("Hello", "World!", "How", "Are", "You"));
+        movie.setActorList(Arrays.asList("Sean Connery", "Johny Deep", "Jason Statham", "Clint Eastwood", "Leonardo diCaprio"));
         movie.setImageList(Arrays.asList(R.drawable.pic9,R.drawable.pic8,R.drawable.pic7,R.drawable.pic6,R.drawable.pic5,R.drawable.pic4));
         movieList.add(movie);
 
         movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-        movie.setActorList(Arrays.asList("Hello", "World!", "How", "Are", "You"));
+        movie.setActorList(Arrays.asList("Hugh Jackman", "Keira Knightley", "Mel Gibson", "Emma Watson", "Sean Connery", "Johny Deep"));
         movie.setImageList(Arrays.asList(R.drawable.pic1,R.drawable.pic5,R.drawable.pic2,R.drawable.pic6,R.drawable.pic3,R.drawable.pic9));
         movieList.add(movie);
     }
