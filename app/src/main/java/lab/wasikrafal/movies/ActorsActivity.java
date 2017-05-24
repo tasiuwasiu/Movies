@@ -24,7 +24,6 @@ public class ActorsActivity extends AppCompatActivity
         fr.setMovie(currentMovie);
     }
 
-
     private void setImages()
     {
         final ImageView iv1 = (ImageView) findViewById(R.id.iv1);
@@ -44,7 +43,6 @@ public class ActorsActivity extends AppCompatActivity
 
         final ImageView iv6 = (ImageView) findViewById(R.id.iv6);
         iv6.setImageResource(currentMovie.getImage(5));
-
     }
 
     @Override

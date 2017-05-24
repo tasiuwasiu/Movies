@@ -87,7 +87,6 @@ public class Movie implements Serializable
     {
         for (Integer s:images)
             imageList.add(s);
-
     }
 
     public int getImage(int i)

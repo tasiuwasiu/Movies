@@ -20,33 +20,30 @@ import java.util.List;
 import android.app.Activity;
 
 
-public class RecyclerViewFragment extends Fragment {
+public class RecyclerViewFragment extends Fragment
+{
 
     private RecyclerFragmentActivityListener listener;
-
     private static final String TAG = "RecyclerViewFragment";
     private static final String KEY_LAYOUT_MANAGER = "layoutManager";
     private static final int SPAN_COUNT = 2;
 
-    private enum LayoutManagerType {
+    private enum LayoutManagerType
+    {
         GRID_LAYOUT_MANAGER,
         LINEAR_LAYOUT_MANAGER
     }
 
     protected LayoutManagerType mCurrentLayoutManagerType;
-
-
     private List<Movie> movieList = new ArrayList<>();
     protected RecyclerView mRecyclerView;
     protected MoviesAdapter mAdapter;
     protected RecyclerView.LayoutManager mLayoutManager;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
-
-        // Initialize dataset, this data would usually come from a local content provider or
-        // remote server.
         initDataset();
     }
 
@@ -57,25 +54,20 @@ public class RecyclerViewFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.recycler_layout, container, false);
         rootView.setTag(TAG);
 
-       mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
-
-        // LinearLayoutManager is used here, this will layout the elements in a similar fashion
-        // to the way ListView would layout elements. The RecyclerView.LayoutManager defines how
-        // elements are laid out.
+        mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
         mLayoutManager = new LinearLayoutManager(getActivity());
-
         mCurrentLayoutManagerType = LayoutManagerType.LINEAR_LAYOUT_MANAGER;
 
-        if (savedInstanceState != null) {
-            // Restore saved layout manager type.
+        if (savedInstanceState != null)
+        {
             mCurrentLayoutManagerType = (LayoutManagerType) savedInstanceState
                     .getSerializable(KEY_LAYOUT_MANAGER);
         }
+
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));
         mAdapter = new MoviesAdapter(movieList);
-        // Set CustomAdapter as the adapter for RecyclerView.
         mRecyclerView.setAdapter(mAdapter);
         initDataset();
 
@@ -93,12 +85,11 @@ public class RecyclerViewFragment extends Fragment {
             }
         }));
 
-
-
         return rootView;
     }
 
-    public void setRecyclerViewLayoutManager(LayoutManagerType layoutManagerType) {
+    public void setRecyclerViewLayoutManager(LayoutManagerType layoutManagerType)
+    {
         int scrollPosition = 0;
 
         // If a layout manager has already been set, get current scroll position.
@@ -125,26 +116,32 @@ public class RecyclerViewFragment extends Fragment {
         mRecyclerView.scrollToPosition(scrollPosition);
     }
 
-    public void onAttach(Context context) {
+    public void onAttach(Context context)
+    {
         super.onAttach(context);
         Activity a = (Activity) context;
 
-        if (a instanceof RecyclerFragmentActivityListener) {
+        if (a instanceof RecyclerFragmentActivityListener)
+        {
             listener = (RecyclerFragmentActivityListener) a;
-        } else {
-            throw new ClassCastException( a.toString() + " musi implementować interfejs: OverviewFragment.OverviewFragmentActivityListener");
+        }
+        else
+        {
+            throw new ClassCastException( a.toString() + " musi implementować interfejs");
         }
     }
 
     @Override
-    public void onSaveInstanceState(Bundle savedInstanceState) {
+    public void onSaveInstanceState(Bundle savedInstanceState)
+    {
         // Save currently selected layout manager.
         savedInstanceState.putSerializable(KEY_LAYOUT_MANAGER, mCurrentLayoutManagerType);
         super.onSaveInstanceState(savedInstanceState);
     }
 
 
-    private void initDataset() {
+    private void initDataset()
+    {
         Movie movie = new Movie("Mad Max: Fury Road", "Action & Adventure", "2015");
         movie.setActorList(Arrays.asList("Hello", "World!", "How", "Are", "You"));
         movie.setImageList(Arrays.asList(R.drawable.pic1,R.drawable.pic5,R.drawable.pic2,R.drawable.pic6,R.drawable.pic3,R.drawable.pic9));
@@ -224,8 +221,6 @@ public class RecyclerViewFragment extends Fragment {
         movie.setActorList(Arrays.asList("Hello", "World!", "How", "Are", "You"));
         movie.setImageList(Arrays.asList(R.drawable.pic1,R.drawable.pic5,R.drawable.pic2,R.drawable.pic6,R.drawable.pic3,R.drawable.pic9));
         movieList.add(movie);
-
-        //mAdapter.notifyDataSetChanged();
     }
 
     public interface RecyclerFragmentActivityListener

@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity implements
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
@@ -58,7 +57,6 @@ public class MainActivity extends AppCompatActivity implements
     public void onItemSelected(Movie m) {
         DetailFragment fragment = (DetailFragment) getFragmentManager()
                 .findFragmentById(R.id.detailFragment);
-
         // sprawdzamy czy fragment istnieje w tej aktywności
         if (fragment != null && fragment.isInLayout()) {
             // ustawiamy teskt we fragmencie
