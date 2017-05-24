@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Created by Rafał on 23.05.2017.
  */
 
-class ActorItem implements Serializable
+public class ActorItem implements Serializable
 {
     private String name;
 
