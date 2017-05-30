@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity implements
     private boolean isLand = false;
     private final FragmentManager fm = getFragmentManager();
     private Fragment currentFragment = null;
+    private Fragment recFragment = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -72,21 +74,20 @@ public class MainActivity extends AppCompatActivity implements
 
     private void setOverviewFragment() {
         FragmentTransaction ft = this.fm.beginTransaction();
-        this.currentFragment = new RecyclerViewFragment();
+        if (recFragment==null)
+            this.currentFragment= new RecyclerViewFragment();
+        else
+            this.currentFragment = recFragment;
         ft.replace(R.id.fragment_container, this.currentFragment);
         ft.commit();
     }
 
     private void setDetailsFragment() {
         FragmentTransaction ft = this.fm.beginTransaction();
+        recFragment = this.currentFragment;
         this.currentFragment = new DetailFragment();
         ft.replace(R.id.fragment_container, this.currentFragment);
-
-        // dodajemy transakcję na stos
-        // dzięki temu możemy wrócić przyciskiem BACK
         ft.addToBackStack(null);
-
-        // zatwierdzamy transakcję
         ft.commit();
     }
 }

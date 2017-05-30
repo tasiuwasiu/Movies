@@ -7,10 +7,12 @@ package lab.wasikrafal.movies;
 import android.content.Context;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,6 +46,7 @@ public class RecyclerViewFragment extends Fragment
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        setRetainInstance(true);
         initDataset();
     }
 
@@ -69,13 +72,12 @@ public class RecyclerViewFragment extends Fragment
         mRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));
         mAdapter = new MoviesAdapter(movieList);
         mRecyclerView.setAdapter(mAdapter);
-        initDataset();
+
 
         mRecyclerView.addOnItemTouchListener(new RecyclerTouchListener(getContext(), mRecyclerView, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
-                Movie movie = movieList.get(position);
-                selectMovie(movie);
+
             }
 
             @Override
@@ -131,6 +133,18 @@ public class RecyclerViewFragment extends Fragment
         }
     }
 
+    public void onResume() {
+        super.onResume();
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        mRecyclerView.setLayoutManager(linearLayoutManager);
+
+        MoviesAdapter mAdapter = new MoviesAdapter(movieList);
+        mRecyclerView.setAdapter(mAdapter);
+
+        setSwipeForRecyclerView();
+    }
+
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState)
     {
@@ -139,6 +153,36 @@ public class RecyclerViewFragment extends Fragment
         super.onSaveInstanceState(savedInstanceState);
     }
 
+    private void setSwipeForRecyclerView() {
+
+        SwipeUtil swipeHelper = new SwipeUtil(0, ItemTouchHelper.LEFT, getActivity()) {
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                int swipedPosition = viewHolder.getAdapterPosition();
+                MoviesAdapter adapter = (MoviesAdapter) mRecyclerView.getAdapter();
+                adapter.pendingRemoval(swipedPosition);
+            }
+
+            @Override
+            public int getSwipeDirs(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
+                int position = viewHolder.getAdapterPosition();
+                MoviesAdapter adapter = (MoviesAdapter) mRecyclerView.getAdapter();
+                if (adapter.isPendingRemoval(position)) {
+                    return 0;
+                }
+                return super.getSwipeDirs(recyclerView, viewHolder);
+            }
+        };
+
+        ItemTouchHelper mItemTouchHelper = new ItemTouchHelper(swipeHelper);
+        mItemTouchHelper.attachToRecyclerView(mRecyclerView);
+
+        //set swipe label
+        swipeHelper.setLeftSwipeLable("");
+        //set swipe background-Color
+        swipeHelper.setLeftcolorCode(ContextCompat.getColor(getActivity(), R.color.red));
+
+    }
 
     private void initDataset()
     {

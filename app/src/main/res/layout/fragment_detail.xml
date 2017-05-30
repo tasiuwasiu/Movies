@@ -21,6 +21,13 @@
         android:layout_gravity="center"
         android:layout_margin="10dip"/>
 
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:id="@+id/iconView"
+        />
+
     <Button
         android:id="@+id/buttonActors"
         android:layout_width="match_parent"

@@ -1,11 +1,10 @@
 <resources>
     <string name="app_name">Movies</string>
     <string name="action_settings">Settings</string>
-    <string name="grid_layout_manager">Grid Layout Manager</string>
-    <string name="linear_layout_manager">Linear Layout Manager</string>
-    <string name="hello">Movies list</string>
     <string name="default_detail">Wybierz film</string>
     <string name="aktorzy">Aktorzy</string>
     <string name="example_title">Example title</string>
+    <string name="undo_label">Undo</string>
+    <string name="archived_label">Deleted</string>
 
 </resources>
